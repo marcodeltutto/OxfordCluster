@@ -9,8 +9,8 @@ mkdir -p $outdir
 fcls=/home/deltutto/DirtMCC8Production/fcls/
 
 nstart=0
-nend=10
-genevents=50
+nend=50
+genevents=1000
 
 DoSubmitSimulation() {
   namebase="prodgenie_bnb_nu_cosmic_dirt_uboone_sim"
@@ -19,8 +19,8 @@ DoSubmitSimulation() {
   
   for i in $(seq -f "%05g" $nstart $nend)
   do
-    elog=$logpath/e_${namebase}_${i}.txt
-    olog=$logpath/o_${namebase}_${i}.txt
+    elog=$logpath/e_${namebase}_simstage_${i}.txt
+    olog=$logpath/o_${namebase}_simstage_${i}.txt
     echo
     echo Submitting job n. $i.
     echo
@@ -38,8 +38,8 @@ DoSubmitReconstruction() {
 
   for i in $(seq -f "%05g" $nstart $nend)
   do
-    elog=$logpath/e_${namebase}_${i}.txt
-    olog=$logpath/o_${namebase}_${i}.txt
+    elog=$logpath/e_${namebase}_recostage_${i}.txt
+    olog=$logpath/o_${namebase}_recostage_${i}.txt
     echo
     echo Submitting job n. $i.
     echo
