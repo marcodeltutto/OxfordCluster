@@ -9,8 +9,8 @@ mkdir -p $outdir
 fcls=/home/deltutto/DirtMCC8Production/fcls/
 
 nstart=0
-nend=50
-genevents=1000
+nend=300
+genevents=16000
 
 DoSubmitSimulation() {
   namebase="prodgenie_bnb_nu_cosmic_dirt_uboone_sim"

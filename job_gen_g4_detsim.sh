@@ -33,7 +33,7 @@ echo "******************** DETSIM STAGE"
 echo
 
 lar -n $genevents -c $fcls/standard_detsim_uboone.fcl -s $outdir/prodgenie_bnb_nu_cosmic_dirt_uboone_${run}_gen1_gen2_g4.root -o $outdir/prodgenie_bnb_nu_cosmic_dirt_uboone_${run}_gen1_gen2_g4_detsim.root
-rm $outdir/prodgenie_bnb_nu_cosmic_dirt_uboone_${run}_gen1_gen2_g4.root
+#rm $outdir/prodgenie_bnb_nu_cosmic_dirt_uboone_${run}_gen1_gen2_g4.root
 
 echo
 echo "This is the end of job_gen_g4_detsim.sh."
