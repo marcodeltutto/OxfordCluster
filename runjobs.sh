@@ -9,13 +9,13 @@ mkdir -p $outdir
 fcls=/home/deltutto/DirtMCC8Production/fcls/
 
 nstart=0
-nend=300
+nend=100
 genevents=16000
 
 DoSubmitSimulation() {
   namebase="prodgenie_bnb_nu_cosmic_dirt_uboone_sim"
 
-  rm $logpath/*
+  rm $logpath/*simstage*
   
   for i in $(seq -f "%05g" $nstart $nend)
   do
@@ -34,7 +34,7 @@ DoSubmitSimulation() {
 DoSubmitReconstruction() {
   namebase="prodgenie_bnb_nu_cosmic_dirt_uboone_reco"
 
-  rm $logpath/*
+  rm $logpath/*recostage*
 
   for i in $(seq -f "%05g" $nstart $nend)
   do
@@ -51,6 +51,23 @@ DoSubmitReconstruction() {
 }
 
 
+DoSubmitAll() {
+  namebase="prodgenie_bnb_nu_cosmic_dirt_uboone_all"
 
+  rm $logpath/*all*
+
+  for i in $(seq -f "%05g" $nstart $nend)
+  do
+    elog=$logpath/e_${namebase}_all_${i}.txt
+    olog=$logpath/o_${namebase}_all_${i}.txt
+    echo
+    echo Submitting job n. $i.
+    echo
+    echo  qsub -l cput=11:00:00 -l walltime=11:00:00 -o $olog -e $elog -v run=$i,namebase=$namebase,genevents=$genevents,outdir=$outdir,fcls=$fcls job_gen_g4_detsim_reco1_reco2_ana.sh
+    echo
+    qsub -l cput=11:00:00 -l walltime=11:00:00 -o $olog -e $elog -v run=$i,namebase=$namebase,genevents=$genevents,outdir=$outdir,fcls=$fcls job_gen_g4_detsim_reco1_reco2_ana.sh
+    echo
+  done
+}
 
 

@@ -114,7 +114,11 @@ physics.producers.corsika.ProjectToHeight:  1800  #height to which particles are
 #    "/pnfs/uboone/persistent/users/mibass/corsika/zerosuppressed/Fe_showers_*.db" ]
 physics.producers.corsika.ShowerFluxConstants:  [ 9.72e1, 1.45e2, 2.07e2, 4.02e2, 4.18e2]
 
-physics.producers.corsika.ShowerInputFiles:     [ "/data/t2k/lar/mdeltutt/sqshowers2_split/p/p_showers_*.db", "/data/t2k/lar/mdeltutt/sqshowers2_split/He/He_showers_*.db", "/data/t2k/lar/mdeltutt/sqshowers2_split/N/N_showers_*.db", "/data/t2k/lar/mdeltutt/sqshowers2_split/Mg/Mg_showers_*.db","/data/t2k/lar/mdeltutt/sqshowers2_split/Fe/Fe_showers_*.db"]
+physics.producers.corsika.ShowerInputFiles:     [ "/data/t2k/lar/mdeltutt/corsika_zerosuppressed/p/p_showers_*.db", 
+                                                  "/data/t2k/lar/mdeltutt/corsika_zerosuppressed/He/He_showers_*.db", 
+                                                  "/data/t2k/lar/mdeltutt/corsika_zerosuppressed/N/N_showers_*.db", 
+                                                  "/data/t2k/lar/mdeltutt/corsika_zerosuppressed/Mg/Mg_showers_*.db",
+                                                  "/data/t2k/lar/mdeltutt/corsika_zerosuppressed/Fe/Fe_showers_*.db" ]
 
 #physics.producers.corsika.ShowerInputFiles:     [ 
 #     "/data/lar/sqshowers/p_showers_*.db", 
