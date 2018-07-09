@@ -2,14 +2,14 @@
 
 echo "Running runjobs.sh" 
 
-logpath=/home/deltutto/DirtMCC8Production/logs
+logpath=/data/t2k/lar/deltutto/logs/
 mkdir -p $logpath
 outdir=/data/t2k/lar/deltutto/prodgenie_bnb_nu_cosmic_dirt_uboone_MCC8/
 mkdir -p $outdir
 fcls=/home/deltutto/DirtMCC8Production/fcls/
 
-nstart=0
-nend=100
+nstart=301
+nend=700
 genevents=16000
 
 DoSubmitSimulation() {
