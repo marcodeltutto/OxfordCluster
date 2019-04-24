@@ -67,6 +67,7 @@ physics:
   }
 
   FilterCryostatNus:{
+          KeepOnlyNusInCryostat: true
           KeepNusInCryostat: false
           module_type: "FilterCryostatNus"
  }
@@ -82,7 +83,8 @@ physics:
 
  #define the producer and filter modules for this path, order matters,
  #filters reject all following items.  see lines starting physics.producers below
- simulate: [ rns, generator, FilterCryostatNus, largeant, FilterNoMCParticles, TimeFilter  ]
+# simulate: [ rns, generator, FilterCryostatNus, largeant, FilterNoMCParticles, TimeFilter  ]
+ simulate: [ rns, generator, FilterCryostatNus, largeant  ]
 
  #define the output stream, there could be more than one if using filters
  stream1:  [ out1 ]
